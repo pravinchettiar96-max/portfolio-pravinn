@@ -3,12 +3,12 @@
 export default function Education() {
   const education = [
     {
-      degree: "B.Voc in AI & ML",
+      degree: "B.Voc in AI & ML and Data Science",
       institution: "Nexcore Institute of Technology",
       status: "Pursuing",
       icon: "🎓",
       color: "from-purple-500 to-pink-500",
-      details: "Specializing in Artificial Intelligence and Machine Learning"
+      details: "Specializing in Artificial Intelligence, Machine Learning and Data Science"
     },
     {
       degree: "Higher Secondary (11th & 12th)",

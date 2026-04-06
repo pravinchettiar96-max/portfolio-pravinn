@@ -12,7 +12,8 @@ export default function Projects() {
       fullDescription: "Goozop is a comprehensive e-commerce solution featuring advanced product filtering, real-time inventory management, secure payment gateway integration, user authentication, shopping cart functionality, and order tracking. Built with modern technologies to provide seamless shopping experience.",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       image: "/gozoop.png",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      figmaLink: "#figma"
     },
     {
       title: "Apple Clone",
@@ -20,7 +21,8 @@ export default function Projects() {
       fullDescription: "A meticulously crafted clone of Apple's official website featuring smooth scroll animations, product showcases, interactive elements, and responsive design. Demonstrates advanced CSS skills, GSAP animations, and attention to detail in replicating premium user experiences.",
       tech: ["React", "CSS3", "GSAP", "Framer Motion"],
       image: "/apple.png",
-      color: "from-gray-500 to-slate-600"
+      color: "from-gray-500 to-slate-600",
+      figmaLink: "#figma"
     },
     {
       title: "Spotify Clone",
@@ -29,7 +31,8 @@ export default function Projects() {
       tech: ["React", "Spotify API", "Tailwind", "Context API"],
       image: "/spotify.png",
       color: "from-green-400 to-lime-500",
-      link: "http://127.0.0.1:5500/spotify.html"
+      link: "http://127.0.0.1:5500/spotify.html",
+      githubLink: "https://github.com/pravinchettiar"
     },
     {
       title: "BookMyShow Clone",
@@ -38,7 +41,8 @@ export default function Projects() {
       tech: ["Next.js", "MongoDB", "Stripe", "Socket.io"],
       image: "/bookmyshow.png",
       color: "from-pink-500 to-rose-500",
-      link: "http://127.0.0.1:5500/bookmyshoww.html"
+      link: "http://127.0.0.1:5500/bookmyshoww.html",
+      githubLink: "https://github.com/pravinchettiar"
     },
     {
       title: "Interactive Game",
@@ -47,7 +51,8 @@ export default function Projects() {
       tech: ["HTML5", "CSS3", "JavaScript", "Canvas API"],
       image: "/game.png",
       color: "from-green-500 to-emerald-500",
-      link: "http://127.0.0.1:5500/game2.html"
+      link: "http://127.0.0.1:5500/game2.html",
+      githubLink: "https://github.com/pravinchettiar"
     },
     {
       title: "Pricing Component",
@@ -56,7 +61,8 @@ export default function Projects() {
       tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
       image: "/pricing.png",
       color: "from-amber-500 to-orange-500",
-      link: "http://127.0.0.1:5500/pricing.html"
+      link: "http://127.0.0.1:5500/pricing.html",
+      githubLink: "https://github.com/pravinchettiar"
     },
     {
       title: "Restaurant Menu",
@@ -65,7 +71,8 @@ export default function Projects() {
       tech: ["HTML5", "CSS3", "JavaScript", "DOM Manipulation"],
       image: "/resturent.png",
       color: "from-red-500 to-pink-500",
-      link: "http://127.0.0.1:5500/resturent.html"
+      link: "http://127.0.0.1:5500/resturent.html",
+      githubLink: "https://github.com/pravinchettiar"
     },
     {
       title: "M.S Import Export",
@@ -75,7 +82,8 @@ export default function Projects() {
       image: "/ms.import export.png",
       color: "from-blue-600 to-indigo-600",
       link: "http://127.0.0.1:5500/audit.html/mohan.html",
-      liveLink: "https://ms-importexport.com/"
+      liveLink: "https://ms-importexport.com/",
+      githubLink: "https://github.com/pravinchettiar"
     },
     {
       title: "Portfolio Website",
@@ -84,7 +92,8 @@ export default function Projects() {
       tech: ["Next.js", "Tailwind", "Framer Motion", "EmailJS"],
       image: "/portfolio.png",
       color: "from-violet-500 to-purple-600",
-      link: "http://127.0.0.1:5500/pravin.html"
+      link: "http://127.0.0.1:5500/pravin.html",
+      githubLink: "https://github.com/pravinchettiar"
     }
   ];
 
@@ -116,8 +125,8 @@ export default function Projects() {
                   <span className="text-white font-bold text-xs">{index + 1}</span>
                 </div>
                 
-                {/* Live demo indicator */}
-                {project.link && (
+                {/* Link indicator */}
+                {(project.link || project.liveLink || project.githubLink || project.figmaLink) && (
                   <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-md z-10">
                     <span className="text-white text-sm">🔗</span>
                   </div>
@@ -158,23 +167,23 @@ export default function Projects() {
                   </div>
                   
                   {/* Action buttons */}
-                  <div className="flex items-center justify-between pt-2 border-t border-gray-700">
-                    <button className="flex items-center text-purple-400 font-semibold text-sm group-hover:text-pink-400 transition-colors duration-300">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 pt-2 border-t border-gray-700">
+                    <button className="flex items-center justify-center sm:justify-start text-purple-400 font-semibold text-sm group-hover:text-pink-400 transition-colors duration-300 py-2 sm:py-0">
                       <span>View Details</span>
                       <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </button>
                     
-                    {project.link && (
+                    {(project.link || project.liveLink || project.githubLink || project.figmaLink) && (
                       <a
-                        href={project.link}
-                        target="_blank"
+                        href={project.link || project.liveLink || project.figmaLink || project.githubLink}
+                        target={project.figmaLink ? "_self" : "_blank"}
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="px-3 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold text-xs hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-1"
+                        className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold text-sm hover:scale-105 hover:shadow-md hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
                       >
-                        <span>Live Demo</span>
+                        <span>{project.figmaLink ? 'View Design' : (project.link || project.liveLink ? 'Live Demo' : 'View Code')}</span>
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>

@@ -31,7 +31,7 @@ export default function About() {
           <div className="relative group">
             {/* Card glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
-            
+          
             {/* Card */}
             <div className="relative bg-gray-800 rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-700 group-hover:border-purple-500/50 transition-all duration-500">
               {/* Introduction */}
